@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <nav class="top-nav">
+        <div class="brand">UFF Popular</div>
+        <div class="nav-actions">
+            <button id="btn-back" class="btn-back" onclick="renderViewNormal()">← Voltar</button>
+        </div>
+    </nav>
     <header class="header">
         <h1>UFF: POPULAR (v3.0)</h1>
         <p id="aviso-legal">Lembramos que todos os grupos e canais apresentados são administrados por estudantes de diversas áreas e não possuem vínculo formal com a Universidade Federal Fluminense.</p>
@@ -23,7 +29,7 @@
             <button class="boton-home" onclick="renderPatadeApoio()"><img src="img/patadeapoio.png" alt="Logo do grupo Pata de Apoio"></button>
         </div>
         <div id="view-dinamica" style="display:none;">
-            <button id="voltar-ao-inicio" onclick="renderViewNormal()">Voltar ao início</button>
+            <!-- Menu fixo já possui o botão voltar -->
             <div id="content-dinamico"></div>
         </div>
     </section>

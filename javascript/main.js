@@ -1,11 +1,16 @@
 function carregarFavicons() {
-    fetch('favicons.html')
-    .then(response => response.text())
-    .then(data => {
-        console.log('Favicons carregados com sucesso:', data);  
-        document.head.insertAdjacentHTML('beforeend', data);
-    })
-    .catch(error => console.error('Erro ao carregar favicons:', error));
+    const protocol = window.location.protocol;
+    if (protocol === 'http:' || protocol === 'https:') {
+        fetch('favicons.html')
+        .then(response => response.text())
+        .then(data => {
+            console.log('Favicons carregados com sucesso:', data);  
+            document.head.insertAdjacentHTML('beforeend', data);
+        })
+        .catch(error => console.error('Erro ao carregar favicons:', error));
+    } else {
+        console.warn('Favicons não carregados: abertura via file:// em Firefox pode bloquear fetch. Sirva via HTTP/HTTPS para carregar favicons.');
+    }
 }
 window.addEventListener('DOMContentLoaded', carregarFavicons);
 
@@ -15,13 +20,15 @@ console.log('Esperando para renderizar conteúdo dinâmico...')
 function renderUFFNoticias() {
 
     personalDocument();
+    updateHeaderTitle('UFF: Notícias');
+    toggleBackButton(true);
 
     document.getElementById('content-dinamico').innerHTML = `
         <h2>UFF: Notícias - Grupo</h2>
         <p>Debates, fofocas, gatinhos e muita gente para conversar. Aqui a discussão é livre (seguindo as regras, é claro).</p>
         <img class="logo" src="img/uffnoticiasgrupo.png" alt="Logo do grupo UFF: Notícias">
         <div class="social-icons">
-            <img class="direcao" src="svg/whatsapp.svg" alt="Ícone do WhatsApp" onclick="window.open('https://chat.whatsapp.com/EXg3JWt52DnIkmIZMcwEbs')">
+            <a class="cta-link" href="https://chat.whatsapp.com/EXg3JWt52DnIkmIZMcwEbs" target="_blank" rel="noopener noreferrer">Entrar no Grupo</a>
         </div>
         <h3>Regras do Grupo</h3>
         <ul>
@@ -35,7 +42,7 @@ function renderUFFNoticias() {
         <p>Canal onde só administradores podem falar. Melhor escolha caso você queira ficar mais atualizado só com as notícias.</p>
         <img class="logo" src="img/uffnoticiascanal.png" alt="Logo do canal UFF: Notícias">
         <div class="social-icons">
-        <img class="direcao" src="svg/whatsapp.svg" alt="Ícone do WhatsApp" onclick="window.open('https://whatsapp.com/channel/0029VaeUeMGAe5VmRIlMT71x')">
+            <a class="cta-link" href="https://whatsapp.com/channel/0029VaeUeMGAe5VmRIlMT71x" target="_blank" rel="noopener noreferrer">Abrir Canal</a>
         </div>
     `;
     console.log('Renderizou UFF Notícias');
@@ -44,6 +51,8 @@ function renderUFFNoticias() {
 function renderUFFBazareVendas() {
 
     personalDocument();
+    updateHeaderTitle('UFF: Bazar/Vendas');
+    toggleBackButton(true);
 
     document.getElementById('content-dinamico').innerHTML = `
         <h2>UFF: Bazar/Vendas</h2>
@@ -51,23 +60,23 @@ function renderUFFBazareVendas() {
         <div class="bazar">
             <div class="grupo">
                 <img src="img/BazareVendas1.png" alt="Logo do grupo UFF: Bazar/Vendas 1.0">
-                <img class="direcao social-icons" src="svg/whatsapp.svg" alt="Ícone do WhatsApp" onclick="window.open('https://chat.whatsapp.com/GmifC2jS4naLPkmyzTZRfM')">
+                <a class="cta-link" href="https://chat.whatsapp.com/GmifC2jS4naLPkmyzTZRfM" target="_blank" rel="noopener noreferrer">Entrar no Grupo 1.0</a>
             </div>
             <div class="grupo">
                 <img src="img/BazareVendas2.png" alt="Logo do grupo UFF: Bazar/Vendas 2.0">
-                <img class="direcao social-icons" src="svg/whatsapp.svg" alt="Ícone do WhatsApp" onclick="window.open('https://chat.whatsapp.com/EIroeF8YB306s2Y8OopaVH')">
+                <a class="cta-link" href="https://chat.whatsapp.com/EIroeF8YB306s2Y8OopaVH" target="_blank" rel="noopener noreferrer">Entrar no Grupo 2.0</a>
             </div>
             <div class="grupo">
                 <img src="img/BazareVendas3.png" alt="Logo do grupo UFF: Bazar/Vendas 3.0">
-                <img class="direcao social-icons" src="svg/whatsapp.svg" alt="Ícone do WhatsApp" onclick="window.open('https://chat.whatsapp.com/EDLWtpJ8zaGGVHRvwrbll2')">
+                <a class="cta-link" href="https://chat.whatsapp.com/EDLWtpJ8zaGGVHRvwrbll2" target="_blank" rel="noopener noreferrer">Entrar no Grupo 3.0</a>
             </div>
             <div class="grupo">
                 <img src="img/BazareVendas4.png" alt="Logo do grupo UFF: Bazar/Vendas 4.0">
-                <img class="direcao social-icons" src="svg/whatsapp.svg" alt="Ícone do WhatsApp" onclick="window.open('https://chat.whatsapp.com/F9LeB58tXup1yywsJzKTeV')">
+                <a class="cta-link" href="https://chat.whatsapp.com/F9LeB58tXup1yywsJzKTeV" target="_blank" rel="noopener noreferrer">Entrar no Grupo 4.0</a>
             </div>
             <div class="grupo">
                 <img src="img/BazareVendasUnificado.png" alt="Logo do grupo UFF: Bazar/Vendas Unificado">
-                <img class="direcao social-icons" src="svg/telegram.svg" alt="Ícone do Telegram" onclick="window.open('https://t.me/+49xcZPKzKoIwMDgx')">
+                <a class="cta-link" href="https://t.me/+49xcZPKzKoIwMDgx" target="_blank" rel="noopener noreferrer">Entrar no Grupo (Telegram)</a>
             </div>
         </div>
         <h3>Regras do Grupo</h3>
@@ -87,6 +96,8 @@ function renderUFFBazareVendas() {
 function renderPatadeApoio(){
 
     personalDocument();
+    updateHeaderTitle('Pata de Apoio');
+    toggleBackButton(true);
 
     document.getElementById('content-dinamico').innerHTML = `
         <h2>Pata de Apoio</h2>
@@ -96,8 +107,8 @@ function renderPatadeApoio(){
         <p>🐾 Composto por voluntários</p>
         <img class="logo" src="img/patadeapoio.png" alt="Logo do grupo Pata de Apoio">
         <div class="social-icons">
-            <img class="direcao" src="svg/instagram.svg" alt="Ícone do Instagram" onclick="window.open('https://www.instagram.com/patadeapoio/')">
-            <img class="direcao" src="svg/whatsapp.svg" alt="Ícone do WhatsApp" onclick="window.open('https://chat.whatsapp.com/GmSvnZLLlX8AyyjzUPjXDG')">
+            <a class="cta-link" href="https://www.instagram.com/patadeapoio/" target="_blank" rel="noopener noreferrer">Abrir Instagram</a>
+            <a class="cta-link" href="https://chat.whatsapp.com/GmSvnZLLlX8AyyjzUPjXDG" target="_blank" rel="noopener noreferrer">Entrar no Grupo</a>
         </div>
         <h3>Regras do Grupo</h3>
         <ul>
@@ -114,6 +125,8 @@ function renderPatadeApoio(){
 function renderCentral(){
 
     personalDocument();
+    updateHeaderTitle('Central Avisy');
+    toggleBackButton(true);
 
     document.getElementById('content-dinamico').innerHTML = `
         <h2>Central Avisy</h2>
@@ -121,7 +134,7 @@ function renderCentral(){
         <p>Aqui é onde toda a ação acontece! Juntamos todos os grupos oficiais da Avisy em um lugar só pra você não perder nadinha do que rola na nossa comunidade.<p>
         <img class="logo" src="img/central.png" alt="Logo do grupo Central Avisy">
         <div class="social-icons">
-            <img class="direcao" src="svg/whatsapp.svg" alt="Ícone do WhatsApp" onclick="window.open('https://chat.whatsapp.com/BikQlKaqOvS9DSEd5ZZQZ3')">
+            <a class="cta-link" href="https://chat.whatsapp.com/BikQlKaqOvS9DSEd5ZZQZ3" target="_blank" rel="noopener noreferrer">Entrar na Central</a>
         </div>
         <h3>Regras do Grupo</h3>
         <ul>
@@ -140,10 +153,21 @@ function renderViewNormal() {
     document.getElementById('view-normal').style.display = 'block';
     document.getElementById('view-dinamica').style.display = 'none';
     document.getElementById('content-dinamico').innerHTML = '';
+    updateHeaderTitle('UFF: POPULAR (v3.0)');
+    toggleBackButton(false);
     console.log('Voltou para a visualização padrão');
 }
 
+function updateHeaderTitle(title) {
+    const headerTitle = document.querySelector('.header h1');
+    if (headerTitle) headerTitle.textContent = title;
+}
 
+function toggleBackButton(show) {
+    const backBtn = document.getElementById('btn-back');
+    if (!backBtn) return;
+    backBtn.style.display = show ? 'inline-block' : 'none';
+}
 
 // Funções de apoio
 
