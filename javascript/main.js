@@ -2,12 +2,12 @@ function carregarFavicons() {
     const protocol = window.location.protocol;
     if (protocol === 'http:' || protocol === 'https:') {
         fetch('favicons.html')
-        .then(response => response.text())
-        .then(data => {
-            console.log('Favicons carregados com sucesso:', data);  
-            document.head.insertAdjacentHTML('beforeend', data);
-        })
-        .catch(error => console.error('Erro ao carregar favicons:', error));
+            .then(response => response.text())
+            .then(data => {
+                console.log('Favicons carregados com sucesso:', data);
+                document.head.insertAdjacentHTML('beforeend', data);
+            })
+            .catch(error => console.error('Erro ao carregar favicons:', error));
     } else {
         console.warn('Favicons não carregados: abertura via file:// em Firefox pode bloquear fetch. Sirva via HTTP/HTTPS para carregar favicons.');
     }
@@ -93,7 +93,7 @@ function renderUFFBazareVendas() {
     console.log('Renderizou UFF: Bazar/Vendas');
 }
 
-function renderPatadeApoio(){
+function renderPatadeApoio() {
 
     personalDocument();
     updateHeaderTitle('Pata de Apoio');
@@ -122,7 +122,7 @@ function renderPatadeApoio(){
     console.log('Renderizou Pata de Apoio');
 }
 
-function renderCentral(){
+function renderCentral() {
 
     personalDocument();
     updateHeaderTitle('Central Avisy');
@@ -171,7 +171,7 @@ function toggleBackButton(show) {
 
 // Funções de apoio
 
-function personalDocument(){
+function personalDocument() {
     document.getElementById('view-normal').style.display = 'none';
     document.getElementById('view-dinamica').style.display = 'block';
 }
@@ -185,4 +185,51 @@ function horaAtual() {
     const hora = agora.getHours();
     const minuto = agora.getMinutes().toString().padStart(2, '0');
     return `${hora}:${minuto}`;
+}
+
+// Novas páginas: Auxílios e Bolsas, e Repúblicas
+function renderAuxiliosEBolsas() {
+    personalDocument();
+    updateHeaderTitle('Auxílios e Bolsas');
+    toggleBackButton(true);
+
+    document.getElementById('content-dinamico').innerHTML = `
+        <h2>Auxílios e Bolsas</h2>
+        <p>Espaço para divulgação e discussão de auxílios, bolsas e oportunidades para estudantes da UFF.</p>
+        <img class="logo" src="img/aux.jpeg" alt="Imagem Auxílios e Bolsas">
+        <div class="social-icons">
+            <a class="cta-link" href="https://chat.whatsapp.com/GnweZX5kG1vAHlCMT2N3Ld?mode=hqrt3" target="_blank" rel="noopener noreferrer">Entrar no Grupo</a>
+        </div>
+        <h3>Regras do Grupo</h3>
+        <ul>
+            <li>Respeite os outros membros do grupo.</li>
+            <li>Mantenha o conteúdo relacionado a auxílios, bolsas e oportunidades acadêmicas.</li>
+            <li>Proibido conteúdo discriminatório ou sexual.</li>
+            <li>Evite spam.</li>
+        </ul>
+    `;
+    console.log('Renderizou Auxílios e Bolsas');
+}
+
+function renderRepublicas() {
+    personalDocument();
+    updateHeaderTitle('Repúblicas');
+    toggleBackButton(true);
+
+    document.getElementById('content-dinamico').innerHTML = `
+        <h2>Repúblicas</h2>
+        <p>Divulgação de vagas e informações sobre repúblicas e moradias estudantis em Niterói.</p>
+        <img class="logo" src="img/rep.jpeg" alt="Imagem Repúblicas">
+        <div class="social-icons">
+            <a class="cta-link" href="https://chat.whatsapp.com/GnweZX5kG1vAHlCMT2N3Ld?mode=hqrt3" target="_blank" rel="noopener noreferrer">Entrar no Grupo</a>
+        </div>
+        <h3>Regras do Grupo</h3>
+        <ul>
+            <li>Respeite os outros membros do grupo.</li>
+            <li>Conteúdo focado em moradias estudantis e repúblicas.</li>
+            <li>Proibido conteúdo discriminatório ou sexual.</li>
+            <li>Evite spam.</li>
+        </ul>
+    `;
+    console.log('Renderizou Repúblicas');
 }

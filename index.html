@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UFF POPULAR</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <nav class="top-nav">
         <div class="brand">UFF Popular</div>
@@ -15,18 +17,31 @@
     </nav>
     <header class="header">
         <h1>UFF: POPULAR (v3.0)</h1>
-        <p id="aviso-legal">Lembramos que todos os grupos e canais apresentados são administrados por estudantes de diversas áreas e não possuem vínculo formal com a Universidade Federal Fluminense.</p>
+        <p id="aviso-legal">Lembramos que todos os grupos e canais apresentados são administrados por estudantes de
+            diversas áreas e não possuem vínculo formal com a Universidade Federal Fluminense.</p>
     </header>
     <section id="content">
         <div id="view-normal">
             <h2>Grupo e canal UFF: Notícias</h2>
-            <button class="boton-home" onclick="renderUFFNoticias()"><img src="img/uffnoticiasgrupo.png" alt="Logo do grupo UFF: Notícias"></button>
-    
+            <button class="boton-home" onclick="renderUFFNoticias()"><img src="img/uffnoticiasgrupo.png"
+                    alt="Logo do grupo UFF: Notícias"></button>
+
             <h2>Grupos da UFF: Bazar/Vendas</h2>
-            <button class="boton-home" onclick="renderUFFBazareVendas()"><img src="img/BazareVendas1.png" alt="Logo do grupo UFF: Bazar/Vendas"></button>
-    
+            <button class="boton-home" onclick="renderUFFBazareVendas()"><img src="img/BazareVendas1.png"
+                    alt="Logo do grupo UFF: Bazar/Vendas"></button>
+
             <h2>Pata de Apoio</h2>
-            <button class="boton-home" onclick="renderPatadeApoio()"><img src="img/patadeapoio.png" alt="Logo do grupo Pata de Apoio"></button>
+            <button class="boton-home" onclick="renderPatadeApoio()"><img src="img/patadeapoio.png"
+                    alt="Logo do grupo Pata de Apoio"></button>
+
+            <!-- Novos grupos -->
+            <h2>Auxílios e Bolsas</h2>
+            <button class="boton-home" onclick="renderAuxiliosEBolsas()"><img src="img/aux.jpeg"
+                    alt="Logo do grupo Auxílios e Bolsas"></button>
+
+            <h2>Repúblicas</h2>
+            <button class="boton-home" onclick="renderRepublicas()"><img src="img/rep.jpeg"
+                    alt="Logo do grupo Repúblicas"></button>
         </div>
         <div id="view-dinamica" style="display:none;">
             <!-- Menu fixo já possui o botão voltar -->
@@ -35,4 +50,5 @@
     </section>
 </body>
 <script src="javascript/main.js"></script>
+
 </html>
