@@ -222,6 +222,7 @@ function renderRepublicas() {
         <img class="logo" src="img/rep.jpeg" alt="Imagem Repúblicas">
         <div class="social-icons">
             <a class="cta-link" href="https://chat.whatsapp.com/GnweZX5kG1vAHlCMT2N3Ld?mode=hqrt3" target="_blank" rel="noopener noreferrer">Entrar no Grupo</a>
+            <a class="cta-link" href="https://chat.whatsapp.com/GPVj0ackIIJEf6xBbCAs4t?mode=hq2tcla" target="_blank" rel="noopener noreferrer">Entrar no Grupo 2.0</a>
         </div>
         <h3>Regras do Grupo</h3>
         <ul>
