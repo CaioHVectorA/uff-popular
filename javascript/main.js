@@ -198,7 +198,8 @@ function renderAuxiliosEBolsas() {
         <p>Espaço para divulgação e discussão de auxílios, bolsas e oportunidades para estudantes da UFF.</p>
         <img class="logo" src="img/aux.jpeg" alt="Imagem Auxílios e Bolsas">
         <div class="social-icons">
-            <a class="cta-link" href="https://chat.whatsapp.com/GnweZX5kG1vAHlCMT2N3Ld?mode=hqrt3" target="_blank" rel="noopener noreferrer">Entrar no Grupo</a>
+            <a class="cta-link" href="https://chat.whatsapp.com/J9kUDoeDjxI9yTTFygJ7YW?mode=gi_t" target="_blank" rel="noopener noreferrer">Entrar no Grupo 1.0</a>
+            <a class="cta-link" href="https://chat.whatsapp.com/Brpt8lGTieP85IrC3P4SAq?mode=gi_t" target="_blank" rel="noopener noreferrer">Entrar no Grupo 2.0</a>
         </div>
         <h3>Regras do Grupo</h3>
         <ul>
@@ -221,8 +222,8 @@ function renderRepublicas() {
         <p>Divulgação de vagas e informações sobre repúblicas e moradias estudantis em Niterói.</p>
         <img class="logo" src="img/rep.jpeg" alt="Imagem Repúblicas">
         <div class="social-icons">
-            <a class="cta-link" href="https://chat.whatsapp.com/GnweZX5kG1vAHlCMT2N3Ld?mode=hqrt3" target="_blank" rel="noopener noreferrer">Entrar no Grupo</a>
-            <a class="cta-link" href="https://chat.whatsapp.com/GPVj0ackIIJEf6xBbCAs4t?mode=hq2tcla" target="_blank" rel="noopener noreferrer">Entrar no Grupo 2.0</a>
+            <a class="cta-link" href="https://chat.whatsapp.com/I3YEN3rD9OY4zygt4MMean" target="_blank" rel="noopener noreferrer">Entrar no Grupo 1.0</a>
+            <a class="cta-link" href="https://chat.whatsapp.com/GPVj0ackIIJEf6xBbCAs4t" target="_blank" rel="noopener noreferrer">Entrar no Grupo 2.0</a>
         </div>
         <h3>Regras do Grupo</h3>
         <ul>
